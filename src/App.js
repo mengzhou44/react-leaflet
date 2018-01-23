@@ -1,38 +1,48 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Leaflet from 'leaflet';
-import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 
-import logo from './logo.svg';
-import './App.css';
-
-Leaflet.Icon.Default.imagePath =
-  '//cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/images/';
+import AnimateExample from "./animate-example";
+import NormalExample from "./normal-example";
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      current: "normal"
+    }
+  }
   render() {
 
-
-
-    const position = [51.505, -0.09];
-
     return (
-      <div className="App">
+      <div className="app">
+        <div className="side-bar">
+          <div>
+            <button
 
-        <Map center={position} zoom={13}>
-          <TileLayer
-            attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker position={position}>
-            <Popup>
-              <span>
-                A pretty CSS3 popup. <br /> Easily customizable.
-            </span>
-            </Popup>
-          </Marker>
-        </Map>
+              onClick={() => {
+                this.setState({ current: "normal" });
+              }}
+            >
+              Normal
+               </button>
+          </div>
 
+          <div className="margin-top-20">
+            <button
+
+              onClick={() => {
+                this.setState({ current: "animate" });
+              }}
+            >
+              Animate
+               </button>
+          </div>
+        </div>
+        <div className="content">
+          <NormalExample current={this.state.current} />
+          <AnimateExample current={this.state.current} />
+        </div>
       </div>
     );
   }

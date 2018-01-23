@@ -1,0 +1,75 @@
+//scss --watch --sourcemap=none scss/app.scss:public/styles.css
+ 
+@import './1-base/1-bases-dir';
+@import './side-bar';
+@import './content';
+
+html,
+body {
+  height: 100% !important;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px !important;
+  font-family: Avenir, Helvetica, Tahoma !important;
+}
+
+#root {
+  height: 100% !important;
+  background-color:  $color-whitesmoke;
+}
+
+.rounded {
+  border-radius: 5px;
+}
+
+.error {
+  color: $color-red;
+  text-align:center;
+  padding: 10px; 
+}
+
+.border-test {
+  border: 1px solid red;
+}
+
+.text-underline {
+  text-decoration-line: underline !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.slim {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.bold {
+  font-weight: 600 !important;
+}
+
+.underline {
+  text-decoration-line: underline !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+
+.pull-right {
+  float: right !important;
+}
+
+
+.app {
+    flex: display;
+    justify-content: flex-start;
+    flex-direction: row;
+}
