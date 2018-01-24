@@ -7,7 +7,7 @@ import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 Leaflet.Icon.Default.imagePath =
     '//cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/images/';
 
-class NormalExample extends Component {
+class ExampleNormal extends Component {
 
     render() {
 
@@ -37,4 +37,4 @@ class NormalExample extends Component {
     }
 }
 
-export default NormalExample;
+export default ExampleNormal;
